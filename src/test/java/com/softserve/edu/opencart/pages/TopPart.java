@@ -103,8 +103,9 @@ public abstract class TopPart {
         return getShoppingCart().getText();
     }
 
-    public void clickShoppingCart() {
+    public ShoppingCartEmptyPage clickShoppingCart() {
         getShoppingCart().click();
+        return null;
     }
 
     // logo

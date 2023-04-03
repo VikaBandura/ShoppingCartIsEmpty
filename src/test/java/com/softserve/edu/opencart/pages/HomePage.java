@@ -12,6 +12,7 @@ public class HomePage extends TopPart {
     public static final String EXPECTED_IPHONE_6 = "iPhone 6";
     //
     private WebElement slideshow0;
+    private WebElement shoppingCart;
     //
     private ProductsContainer productsContainer;
 
@@ -23,9 +24,10 @@ public class HomePage extends TopPart {
     private void initElements() {
         // init elements
         slideshow0 = driver.findElement(By.id("slideshow0"));
+        shoppingCart = driver.findElement(By.xpath("//a[@title='Shopping Cart']"));
         //
         productsContainer = new ProductsContainer(driver);
-        //productsContainer = new ProductsContainer();
+
     }
 
     // Page Object
@@ -69,6 +71,13 @@ public class HomePage extends TopPart {
         //logger.debug("end chooseCurrency() with currency = " + currency.toString());
         return new HomePage(driver);
         //return new HomePage();
+    }
+    public ShoppingCartEmptyPage clickShoppingCart() {
+        shoppingCart.click();
+        return new ShoppingCartEmptyPage(driver);
+    }
+    public String getHomePageURL(){
+        return driver.getCurrentUrl();
     }
 
 //    public HomePage scrollToProduct(Product product) {

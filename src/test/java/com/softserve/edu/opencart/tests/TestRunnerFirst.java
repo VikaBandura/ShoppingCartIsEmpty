@@ -13,7 +13,7 @@ public abstract class TestRunnerFirst {
     private final String BASE_URL = "http://taqc-opencart.epizy.com/";
     private final Long IMPLICITLY_WAIT_SECONDS = 10L;
     private final Long ONE_SECOND_DELAY = 1000L;
-    private WebDriver driver;
+    public WebDriver driver;
 
     // Overload
     protected void presentationSleep() {
@@ -69,6 +69,6 @@ public abstract class TestRunnerFirst {
     protected HomePage loadApplication() {
         //driver.get(BASE_URL);
         return new HomePage(driver);
-        //return new HomePage(getDriver());
-    }
+       }
+
 }
